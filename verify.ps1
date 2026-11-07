@@ -3,16 +3,30 @@
 
 Write-Host "Running project verification..."
 
-# TODO: Run the complete pytest suite with verbose output.
+# Run the complete pytest suite with verbose output.
+pytest -v
 
 Write-Host ""
 Write-Host "Checking required files..."
 
-# TODO: Check whether requirements.txt exists and print a clear message.
+# Check whether requirements.txt exists.
+if (Test-Path "requirements.txt") {
+    Write-Host "requirements.txt found."
+}
+else {
+    Write-Host "ERROR: requirements.txt is missing."
+}
 
-# TODO: Check whether config.json exists and print a clear message.
+# Check whether config.json exists.
+if (Test-Path "config.json") {
+    Write-Host "config.json found."
+}
+else {
+    Write-Host "ERROR: config.json is missing."
+}
 
 Write-Host ""
 Write-Host "Checking Git status..."
 
-# TODO: Display compact Git status.
+# Display compact Git status.
+git status --short
